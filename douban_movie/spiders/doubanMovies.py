@@ -9,7 +9,7 @@ class DoubanmoviesSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        movie_list = response.xpath('//ol[@class="grid_view"]//li')
+        movie_list = response.xpath('//ol[@class="s"]//li')
         for movie in movie_list:
             item = DoubanMovieItem()
             item['movie_pic'] = movie.xpath('.//div[@class="item"]//div[@class="pic"]//img/@src').extract_first()
