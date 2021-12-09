@@ -26,5 +26,5 @@ class DoubanMoviePipeline(object):
 
     def process_item(self, item, spider):
         # collection
-        self.collection.insert(dict(item))
+        self.collection.insert_one(dict(item))
         return item
